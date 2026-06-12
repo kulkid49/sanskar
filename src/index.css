@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Open+Sans:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 16%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 16%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 16%;
+    --primary: 0 0% 16%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 45 100% 70%;
+    --secondary-foreground: 0 0% 16%;
+    --muted: 200 100% 89%;
+    --muted-foreground: 0 0% 35%;
+    --accent: 0 100% 71%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 16%;
+    --input: 0 0% 90%;
+    --ring: 0 100% 71%;
+    --radius: 1.75rem;
+
+    /* Custom colors */
+    --sky-blue: #C7E7FF;
+    --sunny-yellow: #FFE066;
+    --coral: #FF6B6B;
+    --charcoal: #2A2A2A;
+    --soft-gray: #5A5A5A;
+    --mint: #B9F8C5;
+    --soft-cream: #FFF7E6;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: 'Open Sans', sans-serif;
+    color: var(--charcoal);
+    overflow-x: hidden;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+  }
+}
+
+@layer components {
+  .section-card {
+    @apply bg-white rounded-[30px] p-6 md:p-8;
+    box-shadow: 0 18px 0 rgba(0,0,0,0.10);
+  }
+  .section-card-thick {
+    @apply bg-white rounded-[34px] p-6 md:p-10;
+    box-shadow: 0 18px 0 rgba(0,0,0,0.10);
+  }
+  .btn-coral {
+    @apply bg-[#FF6B6B] text-white font-bold px-6 py-3 rounded-full transition-all duration-200;
+  }
+  .btn-coral:hover {
+    transform: translateY(-3px) scale(1.02);
+  }
+  .text-charcoal {
+    color: var(--charcoal);
+  }
+  .text-soft-gray {
+    color: var(--soft-gray);
+  }
+  .bg-sky {
+    background-color: var(--sky-blue);
+  }
+  .bg-sunny {
+    background-color: var(--sunny-yellow);
+  }
+  .bg-coral {
+    background-color: var(--coral);
+  }
+  .hairline {
+    @apply w-[120px] h-[2px] bg-[#2A2A2A] my-4;
+  }
+  .noise-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.04;
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  }
+}
+
+@layer utilities {
+  .font-nunito {
+    font-family: 'Nunito', sans-serif;
+  }
+  .font-opensans {
+    font-family: 'Open Sans', sans-serif;
+  }
+}
